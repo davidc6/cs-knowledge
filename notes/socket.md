@@ -28,8 +28,13 @@ The socket interface which was developed by the researchers at University of Cal
 
 Socket programming is a way of connecting two nodes on a network to communicate with each other.
 
+## Socket limits
+
+* 64K per client per server limit. Real limit is file descriptors. (Reference?)
+
 ## Resources
 
-* (Book) The Linux Programming Interface: A Linux and UNIX System Programming Handbook
-* (Book) Unix Network Programming, Volume 1: The Sockets Networking API
-* (Book) Beej's Guide to Network Programming
+* (book) The Linux Programming Interface: A Linux and UNIX System Programming Handbook
+* (book) Unix Network Programming, Volume 1: The Sockets Networking API
+* (book / html) Beej's Guide to Network Programming - http://beej.us/guide/bgnet/
+* (book) Computer Networking: A Top-Down Approach
