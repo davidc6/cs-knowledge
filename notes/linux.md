@@ -12,6 +12,7 @@
   * `/loop` - not real device that makes file accessible as a block device.
   * `/null` - blackhole, anything written into it gets discarded
 
+
 ## Commands
 
 * `whereis` - allows user to locate things that could be files, source and manual pages.
