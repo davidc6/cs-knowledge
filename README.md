@@ -10,6 +10,7 @@ Succinct notes about various computer science topics. The idea is not to provide
 
 * [System design](notes/system-design/system-design.md)
 * [Activity feed](notes/system-design/activity-feed.md)
+* [Crawler](notes/system-design/crawler.md)
 
 ### Network / communication
 
