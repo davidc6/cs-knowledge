@@ -2,6 +2,8 @@
 
 Succinct notes about various computer science topics. The idea is not to provide an extensive write-up but a quick introduction to a topic, provide definitions and allow for further in-depth investigation if it sparks interest.
 
+This repo gets updated frequently.
+
 ### System design
 
 - [System design](notes/system-design/system-design.md)

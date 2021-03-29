@@ -1,5 +1,4 @@
-Important programming concepts
---------------------
+# Important programming concepts
 
 Records - group of items that allow indexed access to each item (structs)
 
@@ -9,16 +8,13 @@ Independence (concurrency) - activities can evolve independently, can run concur
 
 Named state - a piece of state can be given a name. State can be thought of as am abstract representation of time in a program.
 
----------------------
-Paradigms
----------------------
+## Paradigms
 
-OOP - 
-FP - 
-FRP - 
-Reactive programming - 
-
-Transactional vs streaming applications - 
+- OOP - 
+- Functional programming (FP) - 
+- Reactive programming (RP) - 
+- Functional reactive programming (FRP) -
+- Transactional vs streaming applications - 
 
 ## Thread pool
 
