@@ -8,11 +8,11 @@
 * Non-relational - join operations are generally not supported in these category of databases. Great for dealing with large quantities of complex, diverse and unstructured data.
   * Key-value 
     * Redis
-  * Graph
+  * Graph - uses graph structures for semantic queries with nodes, edges, and properties to represent and store data and its relations.
     * Neo4j
-  * Column oriented (columnar) - data stored by column rather than by row. These databases are optimised for retrival of columns of data. This make them great for analytics and data warehousing when you need to query for a specific field.
+  * Column oriented (columnar) - data stored by column rather than by row. These databases are optimised for retrieval of columns of data. This make them great for analytics and data warehousing when you need to query for a specific field.
     * Apache Cassandra
-  * Document - 
+  * Document
     * MongoDB
 
 * Both row and column databases can serve as a backbone in a system to serve data for ETL tools.
@@ -33,7 +33,7 @@ You can have a really powerful machine with lots of RAM and CPU. But as with any
 
 A better approach is to horizontally scale by adding more servers and splitting a database into smaller, easily managed "shards". This technique is called database sharding. Each shard contains same schema but data is unique in each shard. One of the most important concepts when implementing sharding is the choice of the sharding key that determine how data is stored and distributed. Sharding key allows us to route queries to the correct database.
 
-There issues associated with sharding such as resharding data (no more free space on a shard, uneven data distribution), join queries (denormalise data to perform queries in a single table since normalised data means more joins hence slower query), overwhelming certain shards because of the popularity of data on these shards.
+There issues associated with sharding such as re-sharding data (no more free space on a shard, uneven data distribution), join queries (denormalise data to perform queries in a single table since normalised data means more joins hence slower query), overwhelming certain shards because of the popularity of data on these shards.
 
 ## Cache
 
@@ -67,6 +67,14 @@ Todo
 
 Todo
 
+## Terminology / acronyms
+
+* DAU - daily active users
+* QPS - queries per second (to measure peak hours and latency)
+* Fan-out is a messaging pattern used to broadcast one-to-many, single sender (publisher) to multiple receivers. Pull/push messaging pattern is also an example of a fan-out pattern where single data source is pushed to multiple endpoints. It is a way of delivering data to many users.
+
+## Summary
+
 ### Things to always take into consideration
 
 * Pick right type of database for the jobs
@@ -77,3 +85,14 @@ Todo
 * Have multiple data centers support the application
 * Use database sharding
 * Monitor the system and use automation
+
+### Things to do when designing a system
+
+* Blueprint (discuss initial design)
+* Draw components
+* Create back-of-the-envelope estimation
+* Think about edge cases
+
+## Resources
+
+* Design Facebook Newsfeed - https://learnsystemdesign.blogspot.com/p/design-facebook-newsfeed.html
