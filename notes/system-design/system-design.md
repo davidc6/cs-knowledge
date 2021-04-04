@@ -1,6 +1,47 @@
 # System design
 
-## Databases
+## General tips
+
+### Things to always take into consideration
+
+* Pick right type of database for the jobs
+* Add cache systems when appropriate and use / cache as much as possible
+* Use CDN to host / cache static assets
+* Keep the system stateless by storing state in a data store
+* Redundancy and every level in the system to enable high availability
+* Have multiple data centers support the application
+* Use database sharding
+* Monitor the system and use automation
+
+### Things to do when designing a system
+
+* Talk about / clarify features but don't have too many features (otherwise the system will become complex)
+* Discuss functional requirements (system capacity)
+  * Pick simple numbers for calculations (1, 5, 10, 100, 500, etc.)
+  * Example questions to ask:
+    * How long does it take a system to do something?
+    * What kind of errors can occur?
+    * Any usage limits?
+    * Are there any dependent services that the system should care about?
+    * How large should our storage be? How much for 5 years?
+* Discuss non-functional requirements (system guarantees, SLA - service level agreement)
+  * What to mention:
+    * security (are there any potentially vulnerable parts of our application, DDOS)
+    * fault-tolerance (can the system handle faults?)
+    * durability (can we afford to lose data?)
+    * scalability (what is the scale of the application?)
+    * availability (does the system need to be highly available?)
+    * responsiveness (how responsive does the system need to be?)
+    * latency (can we afford latency and how much?)
+
+* Blueprint (discuss initial design)
+* Draw components
+* Create back-of-the-envelope estimation
+* Think about edge cases
+
+## Components
+
+### Databases
 
 * Relational - data stored in tables, rows. Relation DBs work best with structured data. Because of the constrains that are imposed on relationship in the system, there is a high level of data integrity. Join operations can be performed across tables. Data is organised by record and is kept next to each other in memory.
   * PostgreSQL
@@ -72,26 +113,6 @@ Todo
 * DAU - daily active users
 * QPS - queries per second (to measure peak hours and latency)
 * Fan-out is a messaging pattern used to broadcast one-to-many, single sender (publisher) to multiple receivers. Pull/push messaging pattern is also an example of a fan-out pattern where single data source is pushed to multiple endpoints. It is a way of delivering data to many users.
-
-## Summary
-
-### Things to always take into consideration
-
-* Pick right type of database for the jobs
-* Add cache systems when appropriate and use / cache as much as possible
-* Use CDN to host / cache static assets
-* Keep the system stateless by storing state in a data store
-* Redundancy and every level in the system to enable high availability
-* Have multiple data centers support the application
-* Use database sharding
-* Monitor the system and use automation
-
-### Things to do when designing a system
-
-* Blueprint (discuss initial design)
-* Draw components
-* Create back-of-the-envelope estimation
-* Think about edge cases
 
 ## Resources
 
