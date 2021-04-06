@@ -1,6 +1,7 @@
 # Linux
 
 * "Everything is a file" - Unix treats mostly everything accessible as a file that can be read from and written to. All hardware components are represented as files and the system uses these files to enable communication between them. The idea is an important one and a great property of Linux, where input/output resources such as your documents, directories (folders in Mac OS X and Windows), keyboard, monitor, hard-drives, removable media, printers, modems, virtual terminals and also inter-process and network communication are streams of bytes defined by file system space.
+* daemon (background processes) - is a Linux / Unix program process that runs in the background. Almost all daemons have their names end with a `d`.
 
 ## Directories
 

@@ -62,7 +62,6 @@ auth_token="some-auth-token"
 #### Design
 
 * A user makes a request to `/v1/activities` endpoint
-
 * Activities service fetches user's activities ids from cache (user_id, activity_id)
 * Then the service retrieves information about user
 * Then the service retrieves information about activity

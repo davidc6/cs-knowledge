@@ -33,7 +33,6 @@
     * availability (does the system need to be highly available?)
     * responsiveness (how responsive does the system need to be?)
     * latency (can we afford latency and how much?)
-
 * Blueprint (discuss initial design)
 * Draw components
 * Create back-of-the-envelope estimation
@@ -55,7 +54,6 @@
     * Apache Cassandra
   * Document
     * MongoDB
-
 * Both row and column databases can serve as a backbone in a system to serve data for ETL tools.
 * ETL - extract, transform and load is a technique often used in data warehousing and involves copying data from a source (or many sources), transforming it into a shape that a destination system supports and saving it to the destination that represents the data differently from the source(s).
 
