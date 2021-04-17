@@ -1,5 +1,7 @@
 # Programming languages and concepts
 
+## General concepts
+
 ### Closure
 
 Closure (lexical / function closure) - is a function that is aware and remembers / caches surrounding it variables. If you need to use variables over time, it is best to encapsulate them and allow inner functions to access them. When a function remembers scoped variables it does so via a closure.
@@ -63,6 +65,9 @@ function getId(id, ret) {
   ret(id)
 }
 ```
+### Functors
+
+A mathematical definition of a functor is a mapping between categories. Functional programming takes inspiration from math and defines functors as an object that can map (apply) a function to its' data without changing the structure of it.
 
 ### Lazy evaluation
 
@@ -80,6 +85,14 @@ Todo
 
 Todo
 
-## Resources
+### Resources
 
 - By example: Continuation-passing style in JavaScript - http://matt.might.net/articles/by-example-continuation-passing-style/
+
+## Concurrent computation
+
+- Actor model - is a conceptual model that enables us to deal with concurrent computation by passing messages to actors (primitive unit of computation). Actor can act on such messages by running certain computations.
+  - Most commonly this model is associated with Erlang programming language
+  - In Erlang (and Elixir) an actor is a very lightweight process
+  - Actors are isolated and don't share memory
+  - Actors keep mutable state private
