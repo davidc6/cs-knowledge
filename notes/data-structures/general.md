@@ -80,3 +80,10 @@ DP is an algorithm design style for solving complex programming problems.
 ## Backtracking
 
 - Enables to go through all possible search options meaning that ways of arranging objects or ways of building them. 
+
+## Resources
+
+- Lists - (University of Wisconsin–Madison) http://pages.cs.wisc.edu/~deppeler/cs367-common/readings/Lists/
+- Abstract Data Types (GeeksforGeeks) - https://www.geeksforgeeks.org/abstract-data-types/
+- The List Abstract Data Structure (Queen Mary University of London) - http://www.eecs.qmul.ac.uk/~mmh/ItP/resources/lists.html
+
