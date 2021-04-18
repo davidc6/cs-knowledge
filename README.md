@@ -1,8 +1,8 @@
 # CS Knowledge
 
-Succinct notes about various computer science topics. These notes / definitions provide a quick introduction to a topic without going into too much depth.
+:construction::construction_worker: This repo is updated frequently :construction::construction_worker:
 
-This repo is updated frequently.
+Succinct notes about various computer science topics. These notes / definitions provide a quick introduction to a topic without going into too much depth.
 
 ### General
 
