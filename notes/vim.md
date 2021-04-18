@@ -5,6 +5,9 @@
 - `dd` - Delete a line
 - `wq` - Write and quit (save changes and quit). Adding `!` forces the command.
 - `!` - force an action, no warnings.
+- `x` - delete current character
+- `Ctrl + r` - redo
+- `dw` - delete a word
 
 ## Moving around
 
@@ -12,6 +15,7 @@
 - `Shift + i` - go to beginning of line and drop into `INSERT` mode
 - `$` - go to end of line
 - `Shift + a` (capital a) - go to end of line and append
+- `Shift + g` (capital g) - go to end of file
 
 ## Actions
 

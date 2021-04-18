@@ -1,5 +1,15 @@
 # Data structures
 
+## Abstract data type
+
+- ADT is defined by behaviour (operations) and not concrete implementation. In other words, it is an implementation-independent representation of how data is organised.
+- Common ADTs: stack, queue, priority queue, dictionary
+
+## Abstract data type structure
+
+- ADTS is the actual structure of data used to store data
+- Common data structures that are used to implement data types: array, linked list, hash table, tree(s)
+
 ## Array
 
 - An allocated block of memory that stores data of the same data type. For example, an array of 4 integers.
@@ -18,9 +28,21 @@ thisistuple = ("one", "two", "three")
 ```
 - JavaScript tuple proposal - https://github.com/tc39/proposal-record-tuple
 
+
+
 ## List
 
-A data structure that is similar to an array but allows data of different types and also is growable, meaning it can dynamically expand if necessary.
+- List is similar to an array but allows elements of various types. A list can store heterogeneous data.
+- It is growable, meaning it can dynamically expand if necessary
+- Lists support such operations as `get()`, `insert()`, `remove()`, `removeAt()`, etc.
+
+## Linked list
+
+- Linked list allows to store data anywhere in the memory
+- Each node in a linked list stores some data and the address to the next node
+  - Singly - 
+  - Doubly - 
+  - Circularly - 
 
 ## Trie (prefix tree, digital tree)
 
