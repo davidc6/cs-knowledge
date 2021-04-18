@@ -65,6 +65,7 @@ function getId(id, ret) {
   ret(id)
 }
 ```
+
 ### Functors
 
 A mathematical definition of a functor is a mapping between categories. Functional programming takes inspiration from math and defines functors as an object that can map (apply) a function to its' data without changing the structure of it.
@@ -84,6 +85,34 @@ Todo
 ### Tail call
 
 Todo
+
+### Types (datatypes)
+
+- Types are a way of categorising / grouping values together such as `string`, `character`, `number`, etc.
+- Every value has a type
+- 
+- Types are important for safety, readability and maintainability of programs
+- A `type constructor` is the name of the type
+```ts
+// TypeScript
+type Car {}
+```
+- Type signatures are type level of code
+```ts
+// TypeScript
+function appendStrings(a, b): string {}
+```
+- Data constructors (values that are used, defined, evaluated in code) populate the types they are defined in
+
+#### Product types
+
+- Types that are expressed / built using `AND` operator
+- Similar to a struct in C
+- The ability to contain / carry multiple values in a single data constructor
+
+#### Sum types
+
+- Types that are expressed / built using `OR` operator
 
 ### Resources
 
