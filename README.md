@@ -28,7 +28,9 @@ Succinct notes about various computer science topics. These notes / definitions 
 - [Linux](/notes/linux.md)
 - [Vim](/notes/vim.md)
 
-### Programming languages
+### Programming
 
+- [GRASP principles](/notes/programming/grasp.md)
+- [Functional programming](/notes/programming/functional-programming.md)
 - [Concepts](/notes/programming-languages.md)
 - [Important programming concepts](/notes/important-programming-concepts.md)
