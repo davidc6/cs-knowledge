@@ -55,6 +55,23 @@ function getId(id, ret) {
 
 A mathematical definition of a functor is a mapping between categories. Functional programming takes inspiration from math and defines functors as an object that can map (apply) a function to its' data without changing the structure of it.
 
+### Identity functor
+
+- Identity functor enables us to map over a value
+- If map is given to an identity function it must return the exact same object
+
+## Morphism
+
+- When one structure gets mapped to another but preserves the type
+- You can think of morphisms as functions
+- Morphisms can be composed
+- Identity morphism is when an arrow goes from one object to itself
+- Polymorphic functions work with any type it's given
+
+## Polymorphic
+
+- A polymorphic function is a function that can return multiple types
+
 ## Lazy evaluation
 
 Todo
@@ -63,9 +80,14 @@ Todo
 
 Todo
 
+
 ## Thunk
 
 Todo
+
+## Identity function
+
+- A function that takes an argument and returns an argument
 
 ## Types (datatypes)
 
@@ -99,3 +121,4 @@ function appendStrings(a, b): string {}
 
 - By example: Continuation-passing style in JavaScript - http://matt.might.net/articles/by-example-continuation-passing-style/
 - LofTech with Philip Wadler - Why some people use Functional Languages? - https://www.youtube.com/watch?v=bjcLYLPJg8w
+- A Guide to Functional Programming Lingo for JavaScripters - https://gist.github.com/ericelliott/ea925c58410f0ae74aef

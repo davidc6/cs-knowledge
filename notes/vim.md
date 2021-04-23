@@ -16,6 +16,7 @@
 - `$` - go to end of line
 - `Shift + a` (capital a) - go to end of line and append
 - `Shift + g` (capital g) - go to end of file
+- `gg` - go to start of file
 
 ## Actions
 
