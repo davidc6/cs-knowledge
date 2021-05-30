@@ -47,9 +47,3 @@ https://unix.stackexchange.com/questions/12755/how-to-forward-x-over-ssh-to-run-
 
 - Byte stream - contains bytes, what these bytes are completely depends on the context.
 - Advanced Message Queueing Protocol  https://www.amqp.org/ - 
-
-### Courses / resources
-
-#### PL
-
-- Programming languages - https://www.coursera.org/learn/programming-languages
