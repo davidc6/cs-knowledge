@@ -28,6 +28,29 @@ hardware -> OS (host machine) -> hypervisor -> VM (guest machine) -> OS -> Appli
 
 - Blob is essentially binary data stored as a single entity. This could be an audio / video file, image etc.
 
+## General useful terms
+
+- **Idempotence** - the term generally means that an operation can be applied multiple times without causing unintended effects. As an example, an update to user details is usually idempotent since we can apply the same operation multiple times but the result will be the same. An opposite to that is if a user makes an order, they can make it a number of times and multiple orders will be placed.
+- **function expression** - when a function (named or unnamed) is created inside of an expression it is called a function expression; an expression is a combination of values and functions combined to create a new value.
+
+```js
+// assignment operator here is a type of expression
+const thisIsAFunctionExpression = () => {
+  console.log('Hello!')
+}
+```
+
+- **function declaration** - defines a function that is given name and contains parameters; it is essentially a standalone function / unit of execution
+
+```js
+// function declaration, a standalone unit of execution
+function thisIsAFunctionExpression() {
+  console.log('Hello!')
+}
+```
+
+- POSIX - a set of standards that defines API (application programming interfaces), shells and utilities that allows to maintain compatibility between software and operating systems.
+
 ## Web
 
 ### WebRTC (protocol)
@@ -47,3 +70,5 @@ https://unix.stackexchange.com/questions/12755/how-to-forward-x-over-ssh-to-run-
 
 - Byte stream - contains bytes, what these bytes are completely depends on the context.
 - Advanced Message Queueing Protocol  https://www.amqp.org/ - 
+- JavaScript Expressions and Operators - https://hepunx.rl.ac.uk/~adye/js10/expr.html
+- 

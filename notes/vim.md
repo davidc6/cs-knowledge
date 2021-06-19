@@ -1,9 +1,15 @@
 # Vim
 
+## Modes
+
+- Normal - default / edit mode (no data is edited in normal mode)
+- Visual - highlight text, perform an action (cut, paste, delete etc.)
+- Insert - edit mode to insert new data into a document
+
 ## Shortcuts / commands
 
 - `dd` - Delete a line
-- `wq` - Write and quit (save changes and quit). Adding `!` forces the command.
+- `wq` / `ZZ` - Write and quit (save changes and quit). Adding `!` forces the command.
 - `!` - force an action, no warnings.
 - `x` - delete current character
 - `Ctrl + r` - redo
@@ -17,6 +23,7 @@
 - `Shift + a` (capital a) - go to end of line and append
 - `Shift + g` (capital g) - go to end of file
 - `gg` - go to start of file
+- ??? jump to next blank line
 
 ## Actions
 
