@@ -36,5 +36,30 @@ Succinct notes about various computer science topics. These notes / definitions 
 
 - [GRASP principles](/notes/programming/grasp.md)
 - [Functional programming](/notes/programming/functional-programming.md)
-- [Concepts](/notes/programming-languages.md)
-- [Important programming concepts](/notes/important-programming-concepts.md)
+- [Concepts](/notes/programming/general.md)
+- [Important programming concepts](/notes/programming/important-programming-concepts.md)
+
+## Topics to cover
+
+- Cookies / session
+- ASCII, Unicode
+  - code point vs code unit
+- HTTP load balancer
+- XMPP server
+event based things
+
+- Strangler pattern - 
+- Pub/sub pattern - 
+- Event sourcing pattern - 
+
+- JS observer
+- JS builder pattern
+
+- GraphQL
+  - GraphQL is data query and manipulation language for APIs.
+  - GraphQL allows clients to define the exact structure of the data required and return the same structure of the data from the server
+
+Web Authentication Methods Compared - https://testdriven.io/blog/web-authentication-methods/#oauth-and-openid
+3 Common Methods of API Authentication Explained - https://nordicapis.com/3-common-methods-api-authentication-explained/
+Implementing JWT based authentication in Node.js 🔐 - https://www.sohamkamani.com/blog/javascript/2019-03-29-node-jwt-authentication/
+Top 50 TypeScript Interview Questions Explained - https://www.educative.io/blog/top-50-typescript-interview-questions
