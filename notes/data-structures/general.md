@@ -87,3 +87,7 @@ DP is an algorithm design style for solving complex programming problems.
 - Abstract Data Types (GeeksforGeeks) - https://www.geeksforgeeks.org/abstract-data-types/
 - The List Abstract Data Structure (Queen Mary University of London) - http://www.eecs.qmul.ac.uk/~mmh/ItP/resources/lists.html
 
+## General resources
+
+- Data structures - https://www.cpp.edu/~ftang/courses/CS240/notes.htm
+- Complexity and Big-O Notation - http://pages.cs.wisc.edu/~vernon/cs367/notes/3.COMPLEXITY.html
