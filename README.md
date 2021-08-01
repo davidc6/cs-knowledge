@@ -7,6 +7,7 @@ Succinct notes about various computer science topics. These notes / definitions 
 ## General
 
 - [General CS notes](/notes/general.md)
+- [Operating system](/notes/os.md)
 
 ### Data structures / abstract data types
 
