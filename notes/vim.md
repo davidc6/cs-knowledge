@@ -42,6 +42,12 @@
 - `ge` - back to end of word
 - `ctrl + Q` - unfreeze program
 - `V` - select the current line in one key stroke
+- `gqG` - format text to fit the current screen width limit
+- `ctlz + Z` - to switch to shell, suspends Vim and send process in the
+  background. `jobs -l` to view jobs running in the background. `fg
+  <process_num>` to bring job to the foreground - Ref:
+  http://xahlee.info/linux/linux_job_control.html
+- 
 
 ## Visual mode
 
@@ -57,6 +63,11 @@
 
 - Normal - for editor commands (move around the file, etc.)
 
+## To reearch
+
+- Vim buffers
+- Vim tabs
+
 ## Ref
 
 - https://www.shell-tips.com/linux/vi-vs-vim/n
@@ -64,3 +75,4 @@
 - Copy, cut and paste - https://vim.fandom.com/wiki/Copy,_cut_and_paste
 - Undo and Redo - https://vim.fandom.com/wiki/Undo_and_Redo
 - Graphical cheatsheet - https://stackoverflow.com/questions/4488979/how-to-move-one-word-left-in-the-vi-editor
+- (Moving blazingly fast with the core VIM motions)(https://www.barbarianmeetscoding.com/boost-your-coding-fu-with-vscode-and-vim/moving-blazingly-fast-with-the-core-vim-motions/)
