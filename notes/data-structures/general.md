@@ -77,6 +77,17 @@ DP is an algorithm design style for solving complex programming problems.
 - Memoization - remembering / caching function calculations and returning when same function get called again.
 - Directed acyclic graph (DAG) - is a directed graph, that contains nodes connecting edges without cycles. Directed graph edges go only one way (defined direction). It is impossible to traverse the entire graph starting at one edge. Acyclic means that that are no loops (cycles) in the graph, meaning that there is no way to go back from on node (vertex) to another via the edge. An example of where DAG is used is a topological sort algorithm. This algorithm can be used anywhere where we have dependencies (if one thing depends on another e.g. determining order of tasks in a Makefile).
 
+### Recursion
+
+- When a function keeps on calling itself until it reaches a final point
+- A base case is when a result gets computed immediately given the inputs to the
+  function. It is the simplest, smallest instance of a problem that cannot be
+  decomposed any further. Bases cases usually lay at the bottom which guarantees
+  te recursion to be finite.
+- A recursive step is where the function gets called recursively
+- Recursion can have multiple base cases
+- 
+
 ## Backtracking
 
 - Enables to go through all possible search options meaning that ways of arranging objects or ways of building them. 
