@@ -117,6 +117,20 @@ function appendStrings(a, b): string {}
 
 - Types that are expressed / built using `OR` operator
 
+### Error handling
+
+- https://adambard.com/blog/acceptable-error-handling-in-clojure/
+
+## Haskell
+
+- Does not have any notion of objects. When a value is constructed (instance of
+  a type), the constructor creates a box about the value which then gets passed
+  to functions.
+
+### References
+
+- https://wiki.haskell.org/The_Monad.Reader/Issue3/Functional_Programming_vs_Object_Oriented_Programming
+
 ## Resources
 
 - By example: Continuation-passing style in JavaScript - http://matt.might.net/articles/by-example-continuation-passing-style/
