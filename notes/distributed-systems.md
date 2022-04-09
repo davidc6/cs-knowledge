@@ -5,6 +5,9 @@
 CAP theorem states that in a distributed system it is impossible to guarantee more than two of the three characteristics:
 
 - Consistency - all clients should see the same data at all times, the node that they are connected to should not make a difference in what data the clients are seeing. A write is a successful one if all nodes in the distributed system have the same data (forwarded / replicated)
+  - Weak - once write is done not all reads may see it (used often in real time systems such as voip, realtime gaming)
+  - Eventual - once write is done, all reads will eventually (after a delay) see it, data replication is asynchronous (example is email)
+  - Strong - after write is done, all reads see it (synchronous update)
 - Availability - any request for data from a client will always result in a response even if some nodes are down
 - Partition tolerance - a cluster should continue to operate even if there's a loss / delay of connection between nodes in a system
 
