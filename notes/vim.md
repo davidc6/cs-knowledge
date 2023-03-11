@@ -14,6 +14,15 @@
 - `x` - delete current character
 - `Ctrl + r` - redo
 - `dw` - delete a word
+- `ea` - append at end of word
+- `G + A` - append at the end of file
+- `d0` - delete from cursor to end of line
+
+### Editing in insert mode
+
+- `<C-w>` - when in insert mode allows to delete one word back
+- `<C-u>` - delete back to start line (whatever has been entered)
+- `<C-o>` - insert normal mode
 
 ## Moving around
 
