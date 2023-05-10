@@ -18,12 +18,17 @@
 ## Moving around
 
 - `0` - go to beginning of line
+- `^` or `_` - go to first non-whitespace char in the line
 - `Shift + i` - go to beginning of line and drop into `INSERT` mode
 - `$` - go to end of line
+- `g_` - go to last non-whitespace char
 - `Shift + a` (capital a) - go to end of line and append
 - `Shift + g` (capital g) - go to end of file
 - `gg` - go to start of file
 - ??? jump to next blank line
+- `<C-o>` - jump to the previous location in the jump list
+- `<C-i>` - jump to the next location in the jump list
+- `%` - jump to the matching parenthesis
 
 ## Actions
 
