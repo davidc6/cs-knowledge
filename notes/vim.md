@@ -72,6 +72,7 @@
 ## Frequent
 
 - (Normal) `u` - undo previous action
+- `<C-r>` - redo
 
 ## Modes
 
