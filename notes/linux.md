@@ -57,6 +57,15 @@ r - 4 w - 2 x - 1
   group etc.)
 - `realpath` - usage `realpath .` will show you the real path of a directory if
   it's symlinked
+- `lscpu | grep Endian` - displays "endianness of a machine" (note: does not
+  possibly work in all distro)
+
+## Memory allocation
+
+- Memory (variables) can be dynamically allocated at run time on a "heap". The
+  top end of the heap is called program break. Program break lies just past the 
+  uninitialised data segment. Program break is raised (heap size is
+  icreased) functions such as brk(), sbrk() or malloc family functions are called. 
 
 ### References / resources
 
