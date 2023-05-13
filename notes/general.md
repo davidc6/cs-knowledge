@@ -65,7 +65,6 @@ function thisIsAFunctionExpression() {
 
 https://unix.stackexchange.com/questions/12755/how-to-forward-x-over-ssh-to-run-graphics-applications-remotely
 
-
 ### Misc
 
 - Byte stream - contains bytes, what these bytes are completely depends on the context.
