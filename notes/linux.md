@@ -21,6 +21,12 @@ r - 4 w - 2 x - 1
 
 775 (O - rwx, G - rwx, U - rx)
 
+## Tools
+
+- `ptrace` - trace system calls
+- `xargs` - pass output from the previous command as input into the next
+    command 
+
 ## Directories
 
 - `/usr` - general user system-wide applications / programs are stored here
@@ -75,4 +81,4 @@ r - 4 w - 2 x - 1
 - Linux Beginner Boost - Day 4 (May 7, 2020) (dotfiles, vim etc) -
   https://www.youtube.com/watch?v=xuBiLyCcTzM&list=PLrK9UeDMcQLrO5fwV5smfNvau0PAP16-I&index=4
 - Intro to Dotfiles - https://thoughtbot.com/upcase/videos/intro-to-dotfiles
-
+- [An Introduction to Linux Automation, Tools and Techniques](https://linuxconfig.org/an-introduction-to-linux-automation-tools-and-techniques)
