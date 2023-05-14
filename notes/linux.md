@@ -66,6 +66,16 @@ r - 4 w - 2 x - 1
 - `lscpu | grep Endian` - displays "endianness of a machine" (note: does not
   possibly work in all distro)
 
+## Containers
+
+Linux Containers is a virtualisation method for running multiple, isolated Linux systems/containers on a host using a single Linux kernel. 
+
+These are all container primitives:
+
+- cgroups (control groups) - cgroups control resourse usage and isolate resource (CPU, memory, network, etc.) usage of a collection of processes.
+- namespaces - cgroups and namespace work in tandem to achieve process isolation and resource management. Namespaces help create isolated environments for processes. Such aspects of a process environment as file system, network, process IDs are isolated by the namespaces.
+- root fs - specialized file system and top level of Linux file system that contains all of the files required to boot Linux.
+
 ## Memory allocation
 
 - Memory (variables) can be dynamically allocated at run time on a "heap". The
