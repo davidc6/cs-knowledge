@@ -1,5 +1,7 @@
 # Linux
 
+## General
+
 - "Everything is a file" - Unix treats mostly everything accessible as a file
   that can be read from and written to. All hardware components are represented
   as files and the system uses these files to enable communication between them.
@@ -17,15 +19,42 @@ Each file has associated owner id and group id these help identify which user
 and group file belongs to when file is created user ID is taken from the
 effective user ID of the process
 
-r - 4 w - 2 x - 1
+Example permissions - 775
 
-775 (O - rwx, G - rwx, U - rx)
+| Category  | Permissions | Digit | Formula            |
+|-----------|-------------|-------|--------------------|
+| O (Owner) | rwx         | 7     | 4(r) + 2(w) + 1(x) |
+| G (Group) | rwx         | 7     | 4(r) + 2(w) + 1(x) |
+| U (User)  | rx          | 5     | 4(r) + 1(x)        |
 
-## Tools
+## Man pages
 
-- `ptrace` - trace system calls
+Online manual pages or (man pages) represent the most complete Unix/Linux documentation.
+
+### System calls (1)
+
+- `ptrace` (https://man7.org/linux/man-pages/man2/ptrace.2.html) - a system call that provides a way for one process (tracer) can obs to observe and control the execution of another process (tracee).
+
+### User commands (2)
+
+- `lscpu | grep Endian` - displays "endianness of a machine" (note: does not
+  possibly work in all distro)
+- `whereis` - allows user to locate things that could be files, source and
+  manual pages.
+- `mv !(new) new` - allows to move all files inside the current directory to be
+  moved into "new" directory
+- `chmod` - change permissions in Linux (great article -
+  https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
+- `cp -a /source/. /dest/` - copies files from inside source to dest
+- `getfacl` - get file access control lists (get information such as file owner,
+  group etc.)
 - `xargs` - pass output from the previous command as input into the next
-    command 
+    command
+
+### Library calls (3)
+
+- `realpath` - usage `realpath .` will show you the real path of a directory if
+  it's symlinked
 
 ## Directories
 
@@ -50,21 +79,6 @@ r - 4 w - 2 x - 1
   normally located.
   - `/var/lib` - files that change while system is running normally
 
-## Commands
-
-- `whereis` - allows user to locate things that could be files, source and
-  manual pages.
-- `mv !(new) new` - allows to move all files inside the current directory to be
-  moved into "new" directory
-- `chmod` - change permissions in Linux (great article -
-  https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
-- `cp -a /source/. /dest/` - copies files from inside source to dest
-- `getfacl` - get file access control lists (get information such as file owner,
-  group etc.)
-- `realpath` - usage `realpath .` will show you the real path of a directory if
-  it's symlinked
-- `lscpu | grep Endian` - displays "endianness of a machine" (note: does not
-  possibly work in all distro)
 
 ## Containers
 
