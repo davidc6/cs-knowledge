@@ -9,6 +9,20 @@ processes at a time. A computer program can have a number of processes it is
 associated with and each of these processes might have a number of threads
 associated with each process.
 
+- Each process gets each own virtual address space
+- Virtual address space has a number of well defined areas:
+  - Program code and data, code begins at the same fixed address for all
+    processes and followed by data locations that corresponds to global C
+    variables. There are initialised directly from exec. object file. 
+  - Heap - this is the next section, which is dynamic in size and expands and
+    contracts at run time. Some functions that are responsible for this is C's
+    `malloc` and `free`
+  - Shared libraries - code for shared libraries such as C's std lib etc are
+    located in the middle of the address space. 
+  - Stack - used to implement function calls
+  - Kernel virtual memory - address space reserved for kernel, application
+    programs not allowed to read or write to this area.
+
 - file descriptor - each data stream is represented by a file descriptor which
   is a essential a number (unsigned integer). A process needs to record where
   data streams (e.g. standard output) are connected. File descriptors and their
@@ -108,6 +122,10 @@ to be executed first.
 - Static (stack) vs dynamic (heap) variable allocation
 - Local to functional call, limited in size vs globally accessible, "unlimited in size"
 - 
+
+### Virtual memory
+
+
 
 #### OSes
 
