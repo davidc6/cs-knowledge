@@ -72,9 +72,49 @@ Linux Containers is a virtualisation method for running multiple, isolated Linux
 
 These are all container primitives:
 
-- cgroups (control groups) - cgroups control resourse usage and isolate resource (CPU, memory, network, etc.) usage of a collection of processes.
+- cgroups (control groups) - cgroups control resource usage and isolate resource (CPU, memory, network, etc.) usage of a collection of processes.
 - namespaces - cgroups and namespace work in tandem to achieve process isolation and resource management. Namespaces help create isolated environments for processes. Such aspects of a process environment as file system, network, process IDs are isolated by the namespaces.
 - root fs - specialized file system and top level of Linux file system that contains all of the files required to boot Linux.
+
+## What does a modern Linux distribution consist of?                                                                                                               
+
+- Linux kernel (a part of OS that is always resident in memory and it manages and allocates computer resources)
+  - Things like drivers, scheduler, networking, security and much more
+- Package manager such as Apt for Debian-based distros, Yum
+- GNU tools and libraries - such as
+  - various command line tools (e.g. GNU coreutils, shell utils, fs utils etc)
+  - compilers (e.g. gcc)
+  - tooling that comes with compilers (e.g.  make, ld(linker), gbd(debugger), valgrind(memory checker))
+- C library
+  - glibc (most distros have this)
+  - musl (apline-specific)
+  - uclibc (mostly for embedded devices)
+- Bootloader - a component that loads the OS into memory
+- Init system - a component that manages startup and shutdown on a system (e.g. systemd, openrc, busybox init)
+- Distribution specific kernel patches (i.e. device drivers)
+- Various system daemons
+  - systemd-journald for logging
+  - cron for scheduling tasks
+  - ntpd for time synchronization
+- Additional software and documentation
+- GUI
+  - display server (X11 or Wayland)
+  - Desktop environment (GNOME, XFCE, ect.)
+  - Window manager - manages how display server displays windows
+                                                                                   
+### User space and kernel space                                                   
+                                                                                   
+- Modern OSs' virtual memory is normally segmented into user space and kernel space for memory and hardware protection                                       
+  - User space - code that runs outside of system's kernel, application software and some drivers. This space is isolated from the kernel space to prevent system corruption and unexpected behaviour.
+    - Examples: vim, browsers, bash, gcc etc.
+    - User processes cannot access code and data structures of the kernel. However there is a way to interact and communicate with it.
+    - This is done via syscalls (or system calls)
+    - Simplified example. When a `write()` system call is triggered in the user space, the CPU switches to kernel mode, writes to a file descriptor and returns control to the user space. This is called **context switch** and done by the CPU.
+  - Kernel space - the are where Linux kernel runs. Here there's full access to:
+    - Hardware (CPU, memory, network etc)
+    - System resources
+    - Processes and their state
+    - Examples: scheduler, VFS (virtual files system, an abstraction between user apps and various file systems), device drivers
 
 ## Memory allocation
 
@@ -85,10 +125,12 @@ These are all container primitives:
 
 ### References / resources
 
-- The Linux System Administrator's Guide - https://tldp.org/LDP/sag/html/
-- The Linux Information Project - http://www.linfo.org/usr_bin.html
-- /proc - https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/proc.html
-- Linux Beginner Boost - Day 4 (May 7, 2020) (dotfiles, vim etc) -
-  https://www.youtube.com/watch?v=xuBiLyCcTzM&list=PLrK9UeDMcQLrO5fwV5smfNvau0PAP16-I&index=4
-- Intro to Dotfiles - https://thoughtbot.com/upcase/videos/intro-to-dotfiles
+- [The Linux Programming Interface](https://man7.org/tlpi/)
+- [Advanced Programming in the Unix Environment](https://en.wikipedia.org/wiki/Advanced_Programming_in_the_Unix_Environment)
+- [Rust for Linux Project](https://rust-for-linux.com/)
+- [The Linux System Administrator's Guide](https://tldp.org/LDP/sag/html/)
+- [The Linux Information Project](http://www.linfo.org/usr_bin.html)
+- [/proc](https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/proc.html)
+- [Linux Beginner Boost - Day 4 (May 7, 2020) (dotfiles, vim etc)](https://www.youtube.com/watch?v=xuBiLyCcTzM&list=PLrK9UeDMcQLrO5fwV5smfNvau0PAP16-I&index=4)
+- [Intro to Dotfiles](https://thoughtbot.com/upcase/videos/intro-to-dotfiles)
 - [An Introduction to Linux Automation, Tools and Techniques](https://linuxconfig.org/an-introduction-to-linux-automation-tools-and-techniques)
