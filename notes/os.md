@@ -125,7 +125,11 @@ to be executed first.
 
 ### Virtual memory
 
-
+It is an abstraction which makes an illusion that each process has access
+exclusively to the main memory. Each process has the same view of memory which
+is known as virtual address space. Top most address space is reserved for OS
+(code and data) and is common to all processes. Lower region is code and data
+defined by user's process.
 
 #### OSes
 
