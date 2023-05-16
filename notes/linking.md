@@ -75,4 +75,7 @@ a header that has information about the size and location of each object file.
 
 Linkers - https://www.cs.cmu.edu/afs/cs/academic/class/15213-f10/www/lectures/11-linking.pdf
 Linking notes - https://people.cs.pitt.edu/~xianeizhang/notes/Linking.html
-
+`ld` - https://sourceware.org/binutils/docs/ld/Overview.html
+Linkers and Loader - https://www.linuxjournal.com/article/6463
+Object Files - https://refspecs.linuxbase.org/elf/gabi4+/contents.html
+Libraries - https://www.cs.swarthmore.edu/~kwebb/cs31/s15/bucs/libraries.html
