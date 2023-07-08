@@ -69,6 +69,11 @@
 - `shift + <<` - shift right
 - Fast scroll?
 
+## Macros
+
+- `qa` starts recording macro to buffer a (second letter is the buffer location)
+- `@a` replay macro a 
+
 ## Frequent
 
 - (Normal) `u` - undo previous action
