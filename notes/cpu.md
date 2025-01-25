@@ -102,3 +102,12 @@ Walking the page table -
 - Instruction-level parallelism - processors can execute multiple instructions at one time
 - Single-Instruction, Multiple-Data (SIMD) Parallelism - (aka short vector processors) single instruction to cause multiple operations to be performed in parallel. These instructions are provided in order to speed up applications that process image, sound and video data. 
     - https://www.cs.umd.edu/users/meesh/411/website/projects/SIMDproj/project.html
+
+## Storage
+
+- Smallest addressable unit of memory - 8 bit or 1 byte. Virtual memory is a very large array of bytes and that's how machine-level program views memory. Every bytes of memory is identified by a unique number (aka address). Set of such addresses is virtual address space. The value of C pointer is the virtual address of the first byte of some block os storage. Pointers (in C) reference elements of data structures and have two aspects a value (location of an object) and type (kind of object, integer or floating-point number) that are stored at a location. 
+
+## Data Size
+
+**Word size** is the size of the pointer data (e.g. 32bit or 64bit). To work out the max virtual addresses 2 to the power of n (n being n-bit word size). So for 64bit word sizes, this will be approximately 18 exabytes. 32bit word size is 4 byte pointer, 64bit is 8 byte (in C).
+
