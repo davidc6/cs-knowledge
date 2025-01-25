@@ -111,3 +111,13 @@ Walking the page table -
 
 **Word size** is the size of the pointer data (e.g. 32bit or 64bit). To work out the max virtual addresses 2 to the power of n (n being n-bit word size). So for 64bit word sizes, this will be approximately 18 exabytes. 32bit word size is 4 byte pointer, 64bit is 8 byte (in C).
 
+## Addressing and Byte Ordering
+
+Objects that span multiple bytes must have an address and how the bytes will be ordered in memory. Multi-byte objects are usually stored as stored as contiguous sequence of bytes, with the smallest address of the bytes used as the address. 
+
+- Big endian - ordering of the bytes starts from the high-order byte (most significant, left-most byte to least, right-most).
+
+- Little endian - ordering of the bytes starts from the low-order byte (least significant, left-most byte to most, right-most).
+
+Byte ordering becomes important when binary data is communicated over the network and the source is produced the machine of one endianness and received by another. 
+
