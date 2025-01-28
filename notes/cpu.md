@@ -127,6 +127,24 @@ Walking the page table -
 - Single-Instruction, Multiple-Data (SIMD) Parallelism - (aka short vector processors) single instruction to cause multiple operations to be performed in parallel. These instructions are provided in order to speed up applications that process image, sound and video data. 
     - https://www.cs.umd.edu/users/meesh/411/website/projects/SIMDproj/project.html
 
+
+## CPU
+
+How quickly a CPU can carry out instructions is dependent on: clock speed, cores and cache. Clock speed is the speed at which the CPU can carry out instructions which is controlled by a clock. With every tick of the clock, the CPU fetches and executes instructions. The clock speed is measured in cycles per second. One cycle per second is 1 hertz. 2 GHz is 2 billion cycles per second. 
+
+The OS has itself threads (large number). The processort might only have a few (depending on the CPU). 
+
+8 physical threads but it can have more logical cores (i.e. hyperthreading)., 16 logical theads
+
+A hyperthread - 
+
+A processor gets an interrupt (from OS) asking it to stop what it's doing and interrupt and ask it to do something else. Preemtive OS 
+
+Preemtive - more reliable
+Cooperative - 
+
+Increase CPU wider and more execution at the same time.
+
 ## Storage
 
 - Smallest addressable unit of memory - 8 bit or 1 byte. Virtual memory is a very large array of bytes and that's how machine-level program views memory. Every bytes of memory is identified by a unique number (aka address). Set of such addresses is virtual address space. The value of C pointer is the virtual address of the first byte of some block os storage. Pointers (in C) reference elements of data structures and have two aspects a value (location of an object) and type (kind of object, integer or floating-point number) that are stored at a location. 
