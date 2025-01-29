@@ -132,18 +132,27 @@ Walking the page table -
 
 How quickly a CPU can carry out instructions is dependent on: clock speed, cores and cache. Clock speed is the speed at which the CPU can carry out instructions which is controlled by a clock. With every tick of the clock, the CPU fetches and executes instructions. The clock speed is measured in cycles per second. One cycle per second is 1 hertz. 2 GHz is 2 billion cycles per second. 
 
-The OS has itself threads (large number). The processort might only have a few (depending on the CPU). 
+The OS has itself threads (large number). The processor might only have a few (depending on the CPU). 
 
-8 physical threads but it can have more logical cores (i.e. hyperthreading)., 16 logical theads
+8 physical threads but it can have more logical cores (i.e. hyper-threading)., 16 logical threads.
 
-A hyperthread - 
+A hyper-thread - cpu state, it knows where it is in the instructions. Can run concurrency on the same core as another hyper-thread thread at the same time.
 
 A processor gets an interrupt (from OS) asking it to stop what it's doing and interrupt and ask it to do something else. Preemtive OS 
 
-Preemtive - more reliable
-Cooperative - 
-
 Increase CPU wider and more execution at the same time.
+
+### Resource
+
+- The CPU and the fetch-execute cycle - https://www.bbc.co.uk/bitesize/guides/zws8d2p/revision/2
+- Systems architecture - OCR - https://www.bbc.co.uk/bitesize/guides/zbfny4j/revision/1
+
+## OS
+
+Interrupt - processor decides to replace something (i.e. scheduling timer) could be happening periodically.
+
+Preemptive (multi-tasking) - (preemption) more reliable, better load balancing, thread does not give permission to OS to empty it, OS comes and empties it.
+Cooperative (multi-tasking) - OS does not have the interrupt, every thread when it was written that has a thing that yields it (physically calls out to the scheduler), must less reliable and let's say the code is buggy never calls yield then we are stuck
 
 ## Storage
 
