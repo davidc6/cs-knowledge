@@ -90,7 +90,10 @@ VM has 3 main important capabilities:
 Virtual memory plays a key role the design of hardware exceptions, assemblers, linkers, loaders, shared objects, files and processes. The CPU accesses main memory by generating a virtual address which is then converted (by MMU on the fly) to the appropriate physical address
 
 Virtual - 
-Physical memory - can be viewed as an array of fixed-sized slots called page frames. Each page contains single virtual-memory page. 
+Physical memory - can be viewed as an array of fixed-sized slots called **page frames**. Each of these frames can contain a single virtual-memory page. 
+
+Q: Difference between a page and a frame
+A: Page is a contiguous virtual memory block with a set length (described by one single entry in a page table). The frame is fixed-length RAM block (physical memory). It is the smallest data unit for memory management.
 
 DRAM cache hit is known as page fault. 
 
@@ -142,17 +145,46 @@ A processor gets an interrupt (from OS) asking it to stop what it's doing and in
 
 Increase CPU wider and more execution at the same time.
 
+- CPU needs to keep track where in the code we are - Instruction Pointer
+- TLB
+- CPU state is what CPU needs to know to execute
+	- memory layout
+	- register states
+	- 
+- Process is the state of memory layout
+- registers assembly instructions are not per process, it's at the level below the process
+
+### Wide execution
+
+1. Wider. Can't be any faster, then do operations on many things SIMD 4x, 8x, 10x things
+2. More execution. More execution different programs at once (break work in multiple simultaneous programs)
+
 ### Resource
 
 - The CPU and the fetch-execute cycle - https://www.bbc.co.uk/bitesize/guides/zws8d2p/revision/2
 - Systems architecture - OCR - https://www.bbc.co.uk/bitesize/guides/zbfny4j/revision/1
+- Hyper-threading - https://www.ionos.co.uk/digitalguide/server/know-how/hyperthreading/
+
+## Threads
+
+- a threat it knows where it is, what instructions it's executing
+- main execution threads
+- thread exists on a hardware
+- fibers - a thread and a fiber are very similar. A thread is first class citizen in OSes (exists on the hardware). Manual version on of the thread, do not execute concurrently. Saves the state of the thread. do not execute concurrently (overlapping work in the olden days)
+- logical processing units
+- core and hyper thread
+	- core is a set of units that can do work (instruction decoding, alu, memory units), several instructions per clock cycle if available
+	- hyper-threading - 
+
+- Interrupt (save current state to a piece of memory and load it some other state from some other thread and resume what you are doing)
+- 
 
 ## OS
 
-Interrupt - processor decides to replace something (i.e. scheduling timer) could be happening periodically.
+Interrupt - (interrupt handler) processor decides to replace the thing that is currently running with something else (e.g. scheduling timer) could be happening periodically.
 
 Preemptive (multi-tasking) - (preemption) more reliable, better load balancing, thread does not give permission to OS to empty it, OS comes and empties it.
-Cooperative (multi-tasking) - OS does not have the interrupt, every thread when it was written that has a thing that yields it (physically calls out to the scheduler), must less reliable and let's say the code is buggy never calls yield then we are stuck
+Cooperative (multi-tasking) - OS does not have the interrupt, every thread when it was written that has a thing that yields it (physically calls out to the scheduler), must less reliable and let's say the code is buggy never calls yield then we are stuck.
 
 ## Storage
 
