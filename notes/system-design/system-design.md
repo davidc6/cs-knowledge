@@ -57,6 +57,22 @@
 * Both row and column databases can serve as a backbone in a system to serve data for ETL tools.
 * ETL - extract, transform and load is a technique often used in data warehousing and involves copying data from a source (or many sources), transforming it into a shape that a destination system supports and saving it to the destination that represents the data differently from the source(s).
 
+### CAP theorem 
+
+- Consistency: all clients see the same data at the same time no matter which node they are connected to
+- Availability: every client that makes a request gets the data back even if some nodes are down
+- Partition tolerance: the system continues to communicate even when there's a breakdown between nodes
+
+One of the three properties must be sacrificed to support 2 of 3 properties (i.e. CP, AP, CA). CA cannot really exist in real-world applications.
+
+Bank systems usually have high consistency (e.g. to display up-to-date balance info). In case of inconsistency, an error is returned.
+
+#### Consistency and availability
+
+- When partitions occur in a distributed system, there is a choice to be made between consistency and availability
+
+#### Partition tolerance
+
 ### Failover and redundancy
 
 * To address these problems we use a technique called database replication. This can be implemented using a primary secondary relationship between the original database and copies. Primary database generally supports only write operations and secondary databases get copies of data that primary database holds. Primary database notifies secondary databases and each secondary database gets updated. Most frequently, systems are more read than write heavy and therefore the number of secondary databases and higher.
@@ -111,6 +127,16 @@ Todo
 * DAU - daily active users
 * QPS - queries per second (to measure peak hours and latency)
 * Fan-out is a messaging pattern used to broadcast one-to-many, single sender (publisher) to multiple receivers. Pull/push messaging pattern is also an example of a fan-out pattern where single data source is pushed to multiple endpoints. It is a way of delivering data to many users.
+
+## Distributed tracing
+
+- [Zipkin](https://zipkin.io/) - originally developed by Twitter to troubleshoot complex microservices architectures to provide visibility into the latency of service calls. It has collection and lookup, so enables to understand detailed operations of the service. This system enables to identify bottlenecks and optimise the application. The UI can be used to investigate causes and optimise accordingly. It consists of instrumented services, collector, storage, api (to store, query etc the data) and a web UI. 
+
+## Monitoring
+
+- Prometheus is used for collecting and querying time-series data.  
+
+
 
 ## Resources
 
