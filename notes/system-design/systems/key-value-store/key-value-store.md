@@ -26,6 +26,8 @@
         - Eventual consistency - a form of weak consistency. Given enough time all updates are propagated and replicas are consistent
             - Dynamo and Casandra adopt this model (eventual consistency)
 - Inconsistency resolution - replication high availability causes inconsistencies amongst replicas
+    - Vector clock is a common technique to resolve data conflicts and reconciliation issues
+    - A vector clock [server, version] is associated with a data item
 - Handling failures - 
 - System architecture diagram - 
 - Write path - 
