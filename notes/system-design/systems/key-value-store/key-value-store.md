@@ -28,7 +28,13 @@
 - Inconsistency resolution - replication high availability causes inconsistencies amongst replicas
     - Vector clock is a common technique to resolve data conflicts and reconciliation issues
     - A vector clock [server, version] is associated with a data item
-- Handling failures - 
+- Handling failures
+    - Typically a couple of sources are necessary to confirm that a server is down in a distributed system
+    - All-to-all multicast solution is not ideal when there are many nodes in the system
+    - Gossip protocol (where several entities keep track of other nodes health/heartbeat) is a better decentralized failure detection solution
+    - Temporary failures are handled by another server processes while the server that is down is ignored (once the server is back, data will be pushed to it) - this is called hinted handoff
+    - A Merkle tree enables us to keep replicas in sync in a replica becomes permanently unavailable. It is used for inconsistency detection and data transfer minimization. Each piece of data is compared on replicas and updated to the newest version. 
+    - Data center outages should be mitigated by replicating data across different regions
 - System architecture diagram - 
 - Write path - 
 - Read path - 
