@@ -15,9 +15,9 @@
 
 ## System components
 
-- Data partition - data needs to be split into smaller partitions and stored on multiple servers
-- Data replication - data has be replicated in the event of primary node failure (to achieve high reliability)
-- Consistency - data has to be made readily available regardless of the server that the client is connected to
+- **Data partition** - data needs to be split into smaller partitions and stored on multiple servers
+- **Data replication** - data has be replicated in the event of primary node failure (to achieve high reliability)
+- **Consistency** - data has to be made readily available regardless of the server that the client is connected to
     - Consistency models
         - Strong consistency - any read operation returns a value corresponding to the result of the most updated write item, in order words client never sees out-of-date data. 
             - Replicas are usually forced not to accept new reads/write while every replica has agreed on current write. 
@@ -25,19 +25,31 @@
         - Weak consistency - subsequent read operations may not get the most updated value
         - Eventual consistency - a form of weak consistency. Given enough time all updates are propagated and replicas are consistent
             - Dynamo and Casandra adopt this model (eventual consistency)
-- Inconsistency resolution - replication high availability causes inconsistencies amongst replicas
+- **Inconsistency resolution** - replication high availability causes inconsistencies amongst replicas
     - Vector clock is a common technique to resolve data conflicts and reconciliation issues
     - A vector clock [server, version] is associated with a data item
-- Handling failures
+- **Handling failures**
     - Typically a couple of sources are necessary to confirm that a server is down in a distributed system
     - All-to-all multicast solution is not ideal when there are many nodes in the system
     - Gossip protocol (where several entities keep track of other nodes health/heartbeat) is a better decentralized failure detection solution
     - Temporary failures are handled by another server processes while the server that is down is ignored (once the server is back, data will be pushed to it) - this is called hinted handoff
     - A Merkle tree enables us to keep replicas in sync in a replica becomes permanently unavailable. It is used for inconsistency detection and data transfer minimization. Each piece of data is compared on replicas and updated to the newest version. 
     - Data center outages should be mitigated by replicating data across different regions
-- System architecture diagram - 
-- Write path - 
-- Read path - 
+- **System architecture** - 
+    - A node that a client connects to is a coordinating node
+    - The above node acts as a proxy between the client and key-value store
+    - Consistent hashing is used to distribute the nodes
+    - Adding and removing nodes can be automatic since the system is decentralised
+    - Data is replicated at multiple nodes
+    - Every node has the same set of responsibilities so there isn't a simple point of failure. Each node: 
+        - Client API 
+        - Failure Detection and Repair mechanism
+        - Replication
+        - (Data) Conflict Resolution
+        - Storage engine
+    - 
+- **Write path** - 
+- **Read path** - 
 
 ## Data Partition
 
