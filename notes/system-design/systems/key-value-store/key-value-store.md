@@ -47,9 +47,14 @@
         - Replication
         - (Data) Conflict Resolution
         - Storage engine
-    - 
 - **Write path** - 
-- **Read path** - 
+    - Request comes in and the write is persisted on a commit log file (on a disk)
+    - Data get stored in the memory cache
+    - When the memory hash is full it gets flushed to SSTable of the disk
+- **Read path**
+    - Node that the read request is directed to, checks if data is in the memory cache
+    - If data is not in the memory it will be retrieved from the disk
+    - A bloom filter can be used to find out which SSTable contains the key
 
 ## Data Partition
 
