@@ -57,7 +57,6 @@
     - A bloom filter can be used to find out which SSTable contains the key
 
 ## Data Partition
-
 - It is not feasible to store all the data on a single server
 - Data has to be split into partitions and stored on multiple servers
 - Data partitioning has challenges
@@ -69,4 +68,14 @@ a virtual ring structure i.e. hash ring) can be used to solve the above
     - The result is the position of the node on the hash ring
     - Data is hashed using the same technique and then the ring is traversed (clockwise) until
     a node is found where the data is then stored
-- 
+
+## Summary
+
+- Big data storage - consistent hashing to spread the load across servers
+- High availability reads - data replication and multi-data centre setup
+- High availability writes - data versioning and conflict resolution with vector clocks
+- Dataset partition, incremental scalability, heterogeneity - consistent hashing
+- Tunable consistency - quorum consensus
+- Handling temporary failures - sloppy quorum and hinted handoff
+- Handling permanent failures - merkle tree
+- handling data center outage - cross-data centre replication
