@@ -1,5 +1,9 @@
 # Linux
 
+- [General](#general)
+- [Man pages](#man-pages)
+- [Users and Groups](#users-and-groups)
+
 ## General
 
 - "Everything is a file" - Unix treats mostly everything accessible as a file
@@ -13,27 +17,13 @@
 - daemon (background processes) - is a Linux / Unix program process that runs in
   the background. Almost all daemons have their names end with a `d`.
 
-## User and Groups
-
-Each file has associated owner id and group id these help identify which user
-and group file belongs to when file is created user ID is taken from the
-effective user ID of the process
-
-Example permissions - 775
-
-| Category  | Permissions | Digit | Formula            |
-|-----------|-------------|-------|--------------------|
-| O (Owner) | rwx         | 7     | 4(r) + 2(w) + 1(x) |
-| G (Group) | rwx         | 7     | 4(r) + 2(w) + 1(x) |
-| U (User)  | rx          | 5     | 4(r) + 1(x)        |
-
 ## Man pages
 
 Online manual pages or (man pages) represent the most complete Unix/Linux documentation.
 
 ### System calls (1)
 
-- `ptrace` (https://man7.org/linux/man-pages/man2/ptrace.2.html) - a system call that provides a way for one process (tracer) can obs to observe and control the execution of another process (tracee).
+- `ptrace` (https://man7.org/linux/man-pages/man2/ptrace.2.html) - a system call that provides a way for one process (tracer) to observe and control the execution of another process (tracee).
 
 ### User commands (2)
 
@@ -56,29 +46,19 @@ Online manual pages or (man pages) represent the most complete Unix/Linux docume
 - `realpath` - usage `realpath .` will show you the real path of a directory if
   it's symlinked
 
-## Directories
+## Users and Groups
 
-- `/usr` - general user system-wide applications / programs are stored here
-  - `/sbin` - Non-essential standard system binaries that are used by the system
-    administrator
-  - `/bin` - Contains most of the executables that are not required for booting
-    up the system
-  - `/local` - locally installed software and files are located here and are
-    used by the local administrator (not available to other users on machine);
-    updates to distro will not overwrite any software here. 
-- `/dev` - special device files for all the devices. 
-  - `/sda1` - `sd` the  way Linux (Unix'es) names its drives. sd - from the old
-    days of scsi which became a catch-all case for anything that stores devices.
-    `a` find order. `1` is the partition on the device. `/dev/sda5` - 5th
-    partition on the first drive.
-  - `/loop` - not real device that makes file accessible as a block device.
-  - `/null` - blackhole, anything written into it gets discarded
-- `/proc/<pid>` - virtual file system, process information pseudo-file system.
-  Process information can found here.
-- `/var` - this is where data that is changed when the system is running
-  normally located.
-  - `/var/lib` - files that change while system is running normally
+Each file has associated owner id and group id these help identify which user
+and group file belongs to when file is created user ID is taken from the
+effective user ID of the process
 
+Example permissions - 775
+
+| Category  | Permissions | Digit | Formula            |
+|-----------|-------------|-------|--------------------|
+| O (Owner) | rwx         | 7     | 4(r) + 2(w) + 1(x) |
+| G (Group) | rwx         | 7     | 4(r) + 2(w) + 1(x) |
+| U (User)  | rx          | 5     | 4(r) + 1(x)        |
 
 ## Containers
 
@@ -116,6 +96,31 @@ These are all container primitives:
   - Desktop environment (GNOME, XFCE, ect.)
   - Window manager - manages how display server displays windows
                                                                                    
+## Fundamental concepts
+
+### Directories
+
+- `/usr` - general user system-wide applications / programs are stored here
+  - `/sbin` - Non-essential standard system binaries that are used by the system
+    administrator
+  - `/bin` - Contains most of the executables that are not required for booting
+    up the system
+  - `/local` - locally installed software and files are located here and are
+    used by the local administrator (not available to other users on machine);
+    updates to distro will not overwrite any software here. 
+- `/dev` - special device files for all the devices. 
+  - `/sda1` - `sd` the  way Linux (Unix'es) names its drives. sd - from the old
+    days of scsi which became a catch-all case for anything that stores devices.
+    `a` find order. `1` is the partition on the device. `/dev/sda5` - 5th
+    partition on the first drive.
+  - `/loop` - not real device that makes file accessible as a block device.
+  - `/null` - blackhole, anything written into it gets discarded
+- `/proc/<pid>` - virtual file system, process information pseudo-file system.
+  Process information can found here.
+- `/var` - this is where data that is changed when the system is running
+  normally located.
+  - `/var/lib` - files that change while system is running normally
+
 ### User space and kernel space                                                   
                                                                                    
 - Modern OSs' virtual memory is normally segmented into user space and kernel space for memory and hardware protection                                       
@@ -137,7 +142,7 @@ These are all container primitives:
   uninitialised data segment. Program break is raised (heap size is
   icreased) functions such as brk(), sbrk() or malloc family functions are called. 
 
-### References / resources
+## References / resources
 
 - [The Linux Programming Interface](https://man7.org/tlpi/)
 - [Advanced Programming in the Unix Environment](https://en.wikipedia.org/wiki/Advanced_Programming_in_the_Unix_Environment)
