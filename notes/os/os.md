@@ -1,6 +1,4 @@
-# OS
-
-## Process
+# Process
 
 A process is an instance of a computer programming. A process can be thought of
 as a program in execution (when the program starts the execution). Early
@@ -11,16 +9,16 @@ associated with each process.
 
 - Each process gets each own virtual address space
 - Virtual address space has a number of well defined areas:
-  - Program code and data, code begins at the same fixed address for all
+  - **Program code and data.** Code begins at the same fixed address for all
     processes and followed by data locations that corresponds to global C
     variables. There are initialised directly from exec. object file. 
-  - Heap - this is the next section, which is dynamic in size and expands and
+  - **Heap.** This is the next section, which is dynamic in size and expands and
     contracts at run time. Some functions that are responsible for this is C's
     `malloc` and `free`
-  - Shared libraries - code for shared libraries such as C's std lib etc are
+  - **Stack.** Used to implement function calls.
+  - **Shared libraries.** Code for shared libraries such as C's std lib etc are
     located in the middle of the address space. 
-  - Stack - used to implement function calls
-  - Kernel virtual memory - address space reserved for kernel, application
+  - **Kernel virtual memory.** Address space reserved for kernel, application
     programs not allowed to read or write to this area.
 
 - file descriptor - each data stream is represented by a file descriptor which
