@@ -3,6 +3,8 @@
 - [General](#general)
 - [Man pages](#man-pages)
 - [Users and Groups](#users-and-groups)
+- [Linux Containers](#containers)
+- [Daemons](#daemons)
 
 ## General
 
@@ -14,8 +16,6 @@
   Windows), keyboard, monitor, hard-drives, removable media, printers, modems,
   virtual terminals and also inter-process and network communication are streams
   of bytes defined by file system space.
-- daemon (background processes) - is a Linux / Unix program process that runs in
-  the background. Almost all daemons have their names end with a `d`.
 
 ## Man pages
 
@@ -36,10 +36,10 @@ Online manual pages or (man pages) represent the most complete Unix/Linux docume
 - `chmod` - change permissions in Linux (great article -
   https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
 - `cp -a /source/. /dest/` - copies files from inside source to dest
-- `getfacl` - get file access control lists (get information such as file owner,
-  group etc.)
-- `xargs` - pass output from the previous command as input into the next
-    command
+- `getfacl` - get file access control lists (get information such as file owner, group etc.)
+- `xargs` - pass output from the previous command as input into the next command
+- `ps` - report a snapshot of the current, active processes
+  - `ps -fC` - full-format listing, of the processes whose name is given in the command list (e.g. `ps -fC node`)
 
 ### Library calls (3)
 
@@ -69,6 +69,11 @@ These are all container primitives:
 - cgroups (control groups) - cgroups control resource usage and isolate resource (CPU, memory, network, etc.) usage of a collection of processes.
 - namespaces - cgroups and namespace work in tandem to achieve process isolation and resource management. Namespaces help create isolated environments for processes. Such aspects of a process environment as file system, network, process IDs are isolated by the namespaces.
 - root fs - specialized file system and top level of Linux file system that contains all of the files required to boot Linux.
+
+### Cgroups (control groups)
+
+- The goal of cgroups is enable fine-grained control over allocating, managing, prioritising and resource monitoring.
+- This is one of the Linux container primitives
 
 ## What does a modern Linux distribution consist of?                                                                                                               
 
@@ -134,6 +139,19 @@ These are all container primitives:
     - System resources
     - Processes and their state
     - Examples: scheduler, VFS (virtual files system, an abstraction between user apps and various file systems), device drivers
+
+## Daemons
+
+- Daemon is a long-lived process usually created during system startup and runs until shutdown.
+- It's a process that runs in the background. Almost all daemons have their names end with a `d`.
+  - The kernel never auto-generates any job/terminal-related signals such as
+    - SIGINT - a signal sent to a process when the user interrupts it (think, Ctrl + C)
+    - SIGTSTP - an interactive stop signal and can be handled by the process (like leaving a file system before exiting)
+    - SIGNUP - a signal that is sent to the process when a controlling it system is disconnected or closed (e.g. ssh session loss)
+- Some of the examples of daemons
+  - cron - a daemon that executes commands at a scheduled time
+  - httpd  - a http server daemon (Apache)
+  - sshd - secure shell daemon (permits logging from remote hosts using a secure communications protocol)
 
 ## Memory allocation
 
