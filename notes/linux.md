@@ -155,10 +155,29 @@ These are all container primitives:
 
 ## Memory allocation
 
+- Many dynamic data structures require memory allocation that is only known at run time. These are allocated on the heap.
 - Memory (variables) can be dynamically allocated at run time on a "heap". The
   top end of the heap is called program break. Program break lies just past the 
   uninitialised data segment. Program break is raised (heap size is
-  icreased) functions such as brk(), sbrk() or malloc family functions are called. 
+  increased) functions such as brk(), sbrk() or malloc family functions are called. 
+- The current limit of the heap is called *program break*
+- More memory can be allocated by the program on heap using C's *malloc* family of functions
+- *malloc* functions are based on *brk()* and *sbrk()*. It's about telling the kernel to adjust where the process's program break is, once increased the program can access addresses in the newly allocated area. The physical memory pages are only allocated however when the program access addresses in the pages.
+  - *brk()* - sets the program break, program break is the first location after the end of the uninitialised data segment.
+
+```c
+// Return 0 on success, -1 on error/failure
+int brk(void *end_data_segment)
+```
+
+  - *sbrk()* - 
+
+```c
+// Return previous program break on success, (void *)-1 on error.
+// For clarity, (void *)-1 is the result of casting the integer -1 to void * (generic pointer).
+// -1 is not a valid address and is used as a sentinel (signal) value to indicate an error.
+void *sbrk(intptr_t increment);
+```
 
 ## References / resources
 
@@ -171,3 +190,4 @@ These are all container primitives:
 - [Linux Beginner Boost - Day 4 (May 7, 2020) (dotfiles, vim etc)](https://www.youtube.com/watch?v=xuBiLyCcTzM&list=PLrK9UeDMcQLrO5fwV5smfNvau0PAP16-I&index=4)
 - [Intro to Dotfiles](https://thoughtbot.com/upcase/videos/intro-to-dotfiles)
 - [An Introduction to Linux Automation, Tools and Techniques](https://linuxconfig.org/an-introduction-to-linux-automation-tools-and-techniques)
+- [Linux Container Primitives](https://www.schutzwerk.com/en/blog/linux-container-cgroups-01-intro/)
