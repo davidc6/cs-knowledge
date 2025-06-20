@@ -31,19 +31,24 @@ This component can be broken down into these sub components:
 - Cluster Communication - this component is responsible for communicating with other database nodes in a cluster, also load balancing.
 - Client Communication - client requests travel through this component. These requests are essentially queries in some form of a language. 
 
-The transport then pushes the command deeper into the database.
+The transport then pushes/forwards the command deeper into the database.
 
 ### Query Processor
 
 - From the **transport layer**, the query is handed over to a query processor that parses and processes (interprets and validates) it.
-- Access control checks are done only after the query is fully parsed.
+- Access control checks are carried out only after the query is fully parsed.
 - Once parsed the query is parsed to **query optimizer**. 
-- Query optimizer
-    - Removes impossible parts of the query
-    - Attempts to most optimal way to execute the query based on
-        - Index cardinality
-        - Approximate intersection size
-        - Data placement (nodes in the cluster that hold the data and cost of transfer)
+    - Query optimizer
+        - Removes impossible parts of the query
+        - Attempts to most optimal way to execute the query based on
+            - Index cardinality (i.e. uniqueness of values in an index, higher cardinality indicates a larger number of unique values)
+            - Approximate intersection size (number of rows that exist in common between two or more datasets or queries)
+            - Data placement (nodes in the cluster that hold the data and cost of transfer)
+- Handles relation operations required for query resolution (normally this would be a dependency tree)
+- Handles optimisations
+    - Index ordering - how rows in an index are sorted (ordered index is a data structure that allows for efficient retrieval of data based on a specific order to enable fast lookups and retrieval).
+    - Cardinality estimation - 
+    - Access methods selection - 
 
 ### Execution Engine
 
