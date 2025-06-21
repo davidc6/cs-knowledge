@@ -35,9 +35,14 @@ The transport then pushes/forwards the command deeper into the database.
 
 ### Query Processor
 
+#### Query Parser
+
 - From the **transport layer**, the query is handed over to a query processor that parses and processes (interprets and validates) it.
 - Access control checks are carried out only after the query is fully parsed.
-- Once parsed the query is parsed to **query optimizer**. 
+
+#### Query Optimiser
+
+- Once parsed the query is parsed, it is passed to **query optimizer** 
     - Query optimizer
         - Removes impossible parts of the query
         - Attempts to most optimal way to execute the query based on
@@ -47,15 +52,24 @@ The transport then pushes/forwards the command deeper into the database.
 - Handles relation operations required for query resolution (normally this would be a dependency tree)
 - Handles optimisations
     - Index ordering - how rows in an index are sorted (ordered index is a data structure that allows for efficient retrieval of data based on a specific order to enable fast lookups and retrieval).
-    - Cardinality estimation - 
-    - Access methods selection - 
+    - Cardinality estimation - Estimating (predicting) the number of unique values or rows that match a specific condition. Query optimisers use these estimates to choose the most efficient query plan.
+    - Access methods selection - algorithms and data structures (e.g. tables and indexes) for accessing and organising data on disk
 
 ### Execution Engine
+
+The execution plan is handled by the execution engine. This is usually a collection of local and remote operations.
 
 - A database query is presented as an execution plan, that is a sequence of operations
 - Optimizer picks the best plan
 - This plan is handled by the **execution engine**
-- **Remote execution** is about writing and reading data to and from nodes in the cluster
+
+#### Remote Execution
+
+- **Remote execution** is about writing and reading data to and from nodes in the cluster and replication
+
+#### Local Execution
+
+- 
 
 ### Storage Engine
 
