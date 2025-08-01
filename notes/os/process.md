@@ -132,6 +132,21 @@ defined by user's process.
 MMU (memory management unit) translates virtual addresses to physical addresses
 (using page lookup table). 
 
+### System Call (syscall)
+
+A system call transfers control into the OS while raising the hardware privilege
+level. Since user applications run in user mode (a mode where the restrictions  
+are set by the hardware to what it can do). This means that an application cannot 
+initiate an IO request to disk, send a packet over the wire etc. 
+
+A special hardware instruction called trap usually provides a way to transfer 
+control to a trap-handler (that is pre-specified) and raise privilege to kernel 
+mode. From there the OS has the full control of the system's hardware.
+
+Once the OS is done with the request, it passes control back to the user via 
+return-from-trap (a special instruction), which reverts back to user mode. This 
+also passes control back to where the application left off.
+
 #### OSes
 
 - illumos - https://illumos.org/
