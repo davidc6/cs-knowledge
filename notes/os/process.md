@@ -147,6 +147,18 @@ Once the OS is done with the request, it passes control back to the user via
 return-from-trap (a special instruction), which reverts back to user mode. This 
 also passes control back to where the application left off.
 
+Some of most common system calls: read(), write(), open(), close(), fork(), exec()
+
+Both of the following create a child process: 
+
+- fork() - (copy) duplicates the current process.
+
+- exec() - (replace) replaces the current process with a new program, changes the running
+program of the current process. All code (text) and data in the process is loss 
+and replaced by the executable of the new program. 
+
+
+
 #### OSes
 
 - illumos - https://illumos.org/
