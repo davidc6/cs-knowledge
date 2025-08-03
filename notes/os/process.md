@@ -157,7 +157,15 @@ Both of the following create a child process:
 program of the current process. All code (text) and data in the process is loss 
 and replaced by the executable of the new program. 
 
+A process can become a "zombie" process when terminated but not clean up yet. 
+Parent process is responsible for cleaning up children zombie processes. 
 
+If a parent process is idle which child process is running, it can issue a 
+wait() syscall which moves it off the ready queue until the termination of the 
+child. The parent then waits for the child process to complete with the wait() 
+syscall. A process terminates when the final statement is reached. It asks the OS 
+to delete it via the exit() system call. All the resources of the process then 
+are deallocated and reclaimed by the OS.
 
 #### OSes
 
