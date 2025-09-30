@@ -13,18 +13,18 @@ transfer language`. Object code normally requires services of a `linker`.
 
 Compiler construction touches on topics like:
 
-- greedy algorithms
-- heuristic search techniques
-- graph algorithms
-- dynamic programming
-- automate theory
-- fixed-point algorithms
-- dynamic memory allocation
-- synchronisation
-- naming
-- locality
-- memory hierarchy management
-- pipeline scheduling
+- Greedy algorithms
+- Heuristic search techniques
+- Graph algorithms
+- Dynamic programming
+- Automate theory
+- Fixed-point algorithms
+- Dynamic memory allocation
+- Synchronisation
+- Naming
+- Locality
+- Memory hierarchy management
+- Pipeline scheduling
 
 ## Interpreters
 
@@ -34,7 +34,7 @@ produce the result.
 
 ## Assembly Generation
 
-Produces machine-specific assembly code
+- Produces machine-specific assembly code
 
 ## Miscellaneous
 
@@ -53,12 +53,12 @@ Produces machine-specific assembly code
 
 ## Front End
 
-Dealing with the source code (e.g. Rust, C, C++ etc.). There are a number of 
-components that the front end usually has.
+Focuses on dealing with the source code (e.g. Rust, C, C++ etc.). There are a 
+number of components that the front end usually has.
 
-1. Lexer / Scanner
-2. Parser
-3. Elaborator
+- **Lexer / Scanner**
+- **Parser**
+- **Elaborator**
     - Builds an IR
     - Checking type consistency
     - Laying out storage
@@ -81,15 +81,14 @@ can be a number of optimisation stages.
 
 ## Back End
 
-Dealing with the target language 
+Focuses on dealing with mapping the target language (specifically IR) into the 
+instruction set. The back end usually has the following components:
 
-    - e.g. ISA of CPU
-    - e.g. Some human-oriented programming languages
-    1. (Instruction) Selector - 
-    2. Scheduler - the execution order of operations must be selected by the 
-    _instruction scheduling_.
-    3. Allocator - the decision about which values should reside in registers at 
-    each point in the code is done by _register allocation_. 
+- **(Instruction) Selector** - translates IR into the equivalent target processor ISA.
+- **Scheduler** - the execution order of operations must be selected by the _instruction 
+scheduling_.
+- **Allocator** - the decision about which values should reside in registers at each 
+point in the code is done by _register allocation_. 
 
 ## Vocabulary
 
