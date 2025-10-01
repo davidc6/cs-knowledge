@@ -75,6 +75,11 @@ These are all container primitives:
 - The goal of cgroups is enable fine-grained control over allocating, managing, prioritising and resource monitoring.
 - This is one of the Linux container primitives
 
+### Resources
+
+- [Container security fundamentals: Exploring containers as processes](https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-1/)
+
+
 ## What does a modern Linux distribution consist of?                                                                                                               
 
 - Linux kernel (a part of OS that is always resident in memory and it manages and allocates computer resources)
@@ -178,6 +183,11 @@ int brk(void *end_data_segment)
 // -1 is not a valid address and is used as a sentinel (signal) value to indicate an error.
 void *sbrk(intptr_t increment);
 ```
+
+## To Investigate
+
+- [Fanotify](https://man7.org/linux/man-pages/man7/fanotify.7.html)
+    - [File system Monitoring with fanotify](https://docs.kernel.org/admin-guide/filesystem-monitoring.html)
 
 ## References / resources
 
