@@ -6,10 +6,20 @@
   program in a way it can be easily traversed and analysed.
 - It can be hand-written or a parser-generator (such as Bison or ANTLR) can be 
 used.
+- **Parser Generator** - takes a formal grammar (like EBNF) as input and generates parsing 
+  code automatically. Parser generators prioritise performance and static checks. Example are ANTLR, Happy.
+- **Parser Combinator** - is a library where parsers are built by composing smaller parsing 
+functions (known as combinators) that operate directly on input streams. Parser are then written as as normal code. Parser combinators prioritise flexibility and ease of use. Example are Nom.
 - Tree data structures are a natural way to represent the hierarchical relationship.
 The parser generates an AST (abstract syntax tree) from the list of tokens.
 - AST descriptions are done in a AST language like ASDL (Zephyr Abstract Syntax 
 Description Language).
+- Visitor pattern is used when working with ASTs after parsing. The main purpose is to separate operations (type checking, interpretation, code generation) from the object structure.
+  - Each tree node accepts a visitor object.
+  - Visitor class implements `visit` method for each node type.
+  - When `accept` is called on the node, corresponding visitor method is called for the type.
+  - This allows adding new operations without modifying the AST node class, just new visitor implementation.
+
 
 ```
 // Pseudo language
@@ -34,7 +44,18 @@ not match
 
 ### PEG
 
-PEG stands for parsing expression grammar. It is:
+PEG stands for Parsing Expression Grammar. PEGs are similar to CFGs but the choice 
+operator is ordered and not ambiguous.
+
+CFG grammar is non-deterministic. An input could result in one or more possible 
+parse-trees. Generally, CFG-based parser generators restrict determinability of 
+the grammar.
+
+Backtracking - 
+
+Ordered choice - 
+
+It is:
     - A way of specifying formal languages for text processing
 	- Can be used for matching (regex) or building recursive descent parsers 
     (lex/yacc)
