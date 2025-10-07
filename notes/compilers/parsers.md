@@ -19,7 +19,7 @@ Description Language).
   - Visitor class implements `visit` method for each node type.
   - When `accept` is called on the node, corresponding visitor method is called for the type.
   - This allows adding new operations without modifying the AST node class, just new visitor implementation.
-
+Backtracking - 
 
 ```
 // Pseudo language
@@ -51,7 +51,6 @@ CFG grammar is non-deterministic. An input could result in one or more possible
 parse-trees. Generally, CFG-based parser generators restrict determinability of 
 the grammar.
 
-Backtracking - 
 
 Ordered choice - 
 
