@@ -68,14 +68,35 @@ It is:
 
 ## Grammar
 
+**Grammar** - grammars serve as a means of specification in programming languages. It is a 
+general way to describe a language. 
+
+**Non-terminal Symbols** - are replaced using productions until we arrive at a sentence. These are 
+not "fixed" or variables. These do not terminate the process.
+
+**Terminal Symbols** - these terminate the process of generation. Sometimes these are also called 
+constants. 
+
+**Terminal Symbol** - inside the compiler terminal symbols are usually lexical tokens. 
+
+**(N, T, P, S)** - formal grammars are defined by 4 tuples: non-terminals, terminals, productions, 
+S symbol (starts the derivation of sentences).
+  - N is a finite, non-empty set of Non-terminals
+  - T is a finite, non-empty set of Terminals
+  - N (union) T = (phi)
+  - S is a special non-terminal called Start symbol
+  - P is a finite set Production Rules of the form (a->b)
+
 **Metalanguage** - is used to describe a context-free grammar. 
 A metalanguage is a form of specialised language that is used to describe another 
 (programming) language. It provides syntax, rules and structure for that language. 
 Metalanguages are crucial for compiler construction.
 
-**Context-free grammar (CFG)**- to describe a programming language syntax we need a 
-powerful notation. Traditionally, CFG has been used for this. Grammars often contain 
-recursive rules. Each
+**Context-free grammar (CFG)** - is an important class of grammars used to describe a programming 
+language syntax using a powerful notation. Traditionally, CFG has been used for this. Grammars often 
+contain recursive rules. These rules explain how valid sentences or structures can be 
+formed in a programming language. In compilers these are used to define how code looks 
+and what patterns are allowed. There tools to describe CFGs.
 
 **BNF** - is the notation to represent a CFG. Each BNF rule is called a production. 
 
