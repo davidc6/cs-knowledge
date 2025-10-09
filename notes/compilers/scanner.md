@@ -28,6 +28,23 @@ regular expression matching.
 
 These are programs that identify words in a stream of characters. 
 
+- **Automaton** - relatively self-operating machine designed to automatically follow a sequence of 
+operations or respond to predetermined instructions. The automaton consists of states 
+and transitions.
+
+- **Finite Automaton** - an automaton with a finite number of states.
+
+## DFA (Deterministic Finite Automaton)
+
+Used for lexical analysis. DFA reads the input source as a sequence of characters 
+and identifies tokens such as keywords, operators, identifiers and literals. This is 
+done by recognising patterns. Each state in the DFA represents part of the scanning 
+process. Transitions between states are determined by the current input character. 
+For each state and input symbol there's exactly one next state. This makes it efficient 
+for scanning large source code inputs. 
+
+
+
 ## NFA (Nondeterministic finite automaton)
 
 - Intermediate step from regex to DFA (deterministic finite automaton)
