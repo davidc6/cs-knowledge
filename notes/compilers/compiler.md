@@ -97,4 +97,48 @@ point in the code is done by _register allocation_.
 - **compiler driver** - calls preprocessor, compiler, assembler, linker and converts 
 a source file to an executable.
 - **parser generator** - a tool that builds a parser from specification
+- **S-expression** - symbolic expression, a way to represent data and code in a tree-
+like structure, using a notation. S-expression plays a key role in parsing and 
+interpreting programs. 
 
+An S-expression typically consists of:
+    - Atoms (identifiers, symbols or numbers)
+    - Lists (ordered collections of atoms or other lists)
+
+An S-expression represents abstract syntax trees (ASTs). These are pivotal in compilers 
+for semantic analysis and generation.
+
+```lisp
+;; An s-expression representing the addition of 1 and 2.
+;; There are three elements: operator (+) and operands (1 and 2)
+(+ 1 2)
+```
+We can build an equivalent tree out of it:
+
+```
+   +
+  / \
+ 1   2
+```
+
+Another example of an s-expression:
+
+```lisp
+(+ 2 (* 3 4))
+```
+
+```
+   +
+  / \
+ 2   *
+    / \
+   3   4
+```
+
+- **Execution Context** - an environment or runtime state in which code is evaluated 
+and executed. It has all the information needed for the program to run such as 
+variable bindings, function declarations, scope and instructions to execute. An 
+execution environment typically includes:
+    - Variable environment
+- **Execution Context** - consists of a heap, a stack, code, and instruction pointer, 
+registers etc. 
