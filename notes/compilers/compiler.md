@@ -142,3 +142,16 @@ execution environment typically includes:
     - Variable environment
 - **Execution Context** - consists of a heap, a stack, code, and instruction pointer, 
 registers etc. 
+
+- **Stack Unwinding** - a way of inspecting and modifying the stack
+
+## Statements, declarations, expressions etc.
+
+- Declaration - presents name, type and value of a symbol for it to be used in a 
+program. Symbols are constants, variables and functions. 
+
+- Statement - an action that can be taken to change the state of a program. This 
+can be a loop, conditional or function return.
+
+- Expression - an operation that yields a value. This can be an integer, floating 
+point or string. 
