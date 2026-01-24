@@ -32,6 +32,5 @@ takes place.
 ## Rust-specific Async
 
 - Future
-    - A value that might not be available yet (a file being downloaded, a result 
-    of a computation by another task, etc.)
-    -  
+    - A value that might not be available yet
+    - 
