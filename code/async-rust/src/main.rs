@@ -41,6 +41,7 @@ where
 // Future Combinators.
 // These allow to chain futures together.
 // Methods like map() make it possible.
+// With the compinators we can efficiently wait for multiple futures at once.
 fn count_chars(value: impl Future<Output = String>) -> impl Future<Output = usize> {
     CharCounter {
         inner: value

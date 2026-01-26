@@ -33,4 +33,5 @@ takes place.
 
 - Future
     - A value that might not be available yet
-    - 
+    - Can be "pending" or "ready"
+
