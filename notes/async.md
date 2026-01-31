@@ -34,4 +34,15 @@ takes place.
 - Future
     - A value that might not be available yet
     - Can be "pending" or "ready"
+    - Futures in Rust are lazy and they won't do anything until you ask them 
+    to with (using `await` keyword). This is very similar to Iterators, you 
+    have to call `next()` (or call in a loop/`map`) in order to evaluate it. 
 
+- Runtime
+    - Each `.await` keyword is where the control is handed back to the runtime. 
+    It is essentially an invisible state machine. There should be something that 
+    would execute it.
+
+## epoll
+
+- 
